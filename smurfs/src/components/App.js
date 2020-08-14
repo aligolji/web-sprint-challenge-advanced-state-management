@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "./App.css";
 import { getSmurfs } from '../actions/actions';
 import SmurfsContainer from '../components/SmurfsContainer';
+import Form from './Form';
 
 
 class App extends Component {
@@ -24,8 +25,8 @@ class App extends Component {
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
         <div className='smurfs-container'>
-          <h2>smurfs container - inside App</h2>
           <SmurfsContainer />
+          <Form />
         </div>
       </div>
     );

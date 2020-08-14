@@ -1,11 +1,24 @@
 import React from 'react';
+import {connect } from 'react-redux';
 
-export default function SmurfsContainer() {
-    
+import Smurf from '../components/Smurf';
+
+function SmurfsContainer(props) {
+    console.log(props)
+
     return(
         <div>
-            <h2>NOTE FROM CONTAINER</h2>
+            {props.smurfs.map((smurf) => {
+                return <Smurf smurf={smurf} key={smurf.id} />;
+                })}
         </div>
     );
 };
 
+const mapStateToProps = (state) => {
+    return{
+        smurfs: state.smurfs
+    };
+};
+
+export default connect(mapStateToProps, {})(SmurfsContainer);

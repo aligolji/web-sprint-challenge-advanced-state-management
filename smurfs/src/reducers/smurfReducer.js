@@ -5,7 +5,6 @@ export const initialState = {
     error: '',
     loading: false
 };
-console.log('REDUCER!!!!!!!!')
 
 export const smurfReducer = (state = initialState, action) => {
     console.log('reducer', action);
@@ -18,7 +17,7 @@ export const smurfReducer = (state = initialState, action) => {
             };
         case ADD_SMURF:
             return {
-                ...StaticRange,
+                ...state,
                 smurfs: [...state.smurfs, action.payload],
                 loading: false
             };
